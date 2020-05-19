@@ -326,7 +326,7 @@ jobs:
             echo $GCS_MARKET_KEY > $GCS_PATH
             python3 ./Tests/Marketplace/upload_packs.py -a $PACK_ARTIFACTS -e $EXTRACT_FOLDER -b 'marketplace-dist' -d $PACKS_DEPENDENCIES --id_set_path $CIRCLE_ARTIFACTS/id_set.json -s $GCS_PATH -n $CIRCLE_BUILD_NUM -k $PACK_SIGNING_KEY -p 'All' -pb 'marketplace-dist-private' -o
             rm $GCS_PATH
-          when: alwaysk
+          when: always
       - store_artifacts:
           path: artifacts
           destination: artifacts
